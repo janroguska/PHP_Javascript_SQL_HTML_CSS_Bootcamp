@@ -1,0 +1,35 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="menu.css">
+	<title>Connexion</title>
+</head>
+<body  style="text-align: center">
+	<div class="modifinfo-page">
+		<div class="modifinfo">
+			<form method="post" action = "./modifinfo.php" class="box">
+				<h1>
+					Mot de passe: <input type="password" name ="oldpw">
+					<BR />
+					Nouveau mot de passe : <input type="password" name="newpw">
+					<Br/>
+					Nom <input type="text" name ="nom"/>
+					<br />
+					Prenom: <input type="text" name ="prenom"/>
+					<br />
+					Adresse de livraison <input type="text" name ="address"/>
+					<input type="submit" name="submit" value="Modifier"/>
+				</h1>
+			</form>
+			<center>
+			<form method="post" action="./index.php">
+				<input class="button-modif" type="submit" name="submit" value="Page d'accueil">
+			</form>
+			<form method="post" action="./login.html">
+				<input class="button-modif" type="submit" name="submit" value="Se connecter">
+			</form>
+		</center>
+		</div>
+	</div>
+</body>
+</html>
