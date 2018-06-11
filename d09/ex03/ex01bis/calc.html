@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+	<TITLE>Javascript</TITLE>
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<STYLE>
+	</STYLE>
+</HEAD>
+<BODY>
+	<div>
+		<center><form method="post" name="form">
+		<input id="left"/>
+		<select id="operator"><option value="+">+</option><option value="-">-</option><option value="*">*</option><option value="/">/</option><option value="%">%</option></select>
+		<input  id="right" />
+		<input type="button" name="submit" value="Try me!" id="button"/>
+		</center>
+	</div>
+			<script>
+				$(document).ready(function(){
+					$("#button").click(function(){
+						var lefttmp = $("#left").val();
+						var righttmp = $("#right").val();
+						var operator = $("#operator").val();
+						if (!lefttmp || !righttmp)
+						{
+							console.log("Error :(");
+							alert("Error :(");
+							return ;
+						}
+						var left = Number(lefttmp);
+						var right = Number(righttmp);
+						if (left < 0 || right < 0 || Number.isInteger(left) === false || Number.isInteger(right === false))
+						{
+							console.log("Error :(");
+							alert("Error :(");
+						}
+						else if ((operator === "/" || operator === "%") && right === 0)
+						{
+							console.log("It's over 9000!");
+							alert("It's over 9000!");
+						}
+						else
+						{
+							var result = eval(left + operator + right);
+							console.log(result);
+							alert(result);
+						}
+					});
+					setInterval(function() {
+						console.log("Please, use me...");
+						alert("Please, use me...");
+					}, 30000);
+				});
+			</script>
+</BODY>
+</HTML>

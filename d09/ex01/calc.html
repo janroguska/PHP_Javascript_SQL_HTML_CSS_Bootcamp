@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>Javascript</title>
+</head>
+<body>
+	<div>
+		<center><form method="post" name="form" onsubmit="calc()">
+		<input id="left"/>
+		<select id="operator"><option value="+">+</option><option value="-">-</option><option value="*">*</option><option value="/">/</option><option value="%">%</option></select>
+		<input  id="right" />
+		<input type="button" name="submit" value="Try me!" onclick="calc()"/>
+		</center>
+	</div>
+			<script>
+				function calc()
+				{
+					var lefttmp = document.getElementById("left").value;
+					var operator = document.getElementById("operator").value;
+					var righttmp = document.getElementById("right").value;
+					if (!lefttmp || !righttmp)
+					{
+						console.log("Error :(");
+						alert("Error :(");
+						return ;
+					}
+					var left = Number(lefttmp);
+					var right = Number(righttmp);
+					if (left < 0 || right < 0 || Number.isInteger(left) === false || Number.isInteger(right === false))
+					{
+						console.log("Error :(");
+						alert("Error :(");
+					}
+					else if ((operator === "/" || operator === "%") && right === 0)
+					{
+						console.log("It's over 9000!");
+						alert("It's over 9000!");
+					}
+					else
+					{
+						var result = eval(left + operator + right);
+						console.log(result);
+						alert(result);
+					}
+				}
+				setInterval(function() {
+						console.log("Please, use me...");
+						alert("Please, use me...");
+					}, 30000);
+			</script>
+</body>
+</html>

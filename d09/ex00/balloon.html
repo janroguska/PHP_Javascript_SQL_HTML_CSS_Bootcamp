@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+	<TITLE>Javascript</TITLE>
+	<STYLE>
+		#balloon {
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			background-color: red;
+		}
+	</STYLE>
+</HEAD>
+<BODY>
+	<div>
+			<div onclick="blow()" onmouseout="shrink()" id="balloon"></div>
+			<script>
+				colour = ['red', 'green', 'blue'];
+				var i = 0;
+				var x = document.getElementById("balloon");
+				function blow()
+				{
+					var size = x.offsetWidth;
+					var new_size = size + 10;
+					if (new_size > 420)
+						new_size = 200;
+					x.style.width =  new_size + 'px';
+					x.style.height =  new_size + 'px';
+					shift = colour.shift()
+					colour.push(shift);
+					if (x.style.backgroundColor == shift)
+					{
+						shift = colour.shift()
+						colour.push(shift);
+					}
+					x.style.backgroundColor = shift;
+				}
+				function shrink()
+				{
+					var size = x.offsetWidth;
+					var new_size = size - 5;
+					if (new_size < 200)
+						new_size = 200;
+					x.style.width =  new_size + 'px';
+					x.style.height =  new_size + 'px';
+					shift = colour.pop();
+					colour.unshift(shift);
+					if (x.style.backgroundColor == shift)
+					{
+						shift = colour.pop();
+						colour.unshift(shift);
+					}
+					x.style.backgroundColor = shift;
+				}
+
+			</script>
+	</div>
+</BODY>
+</HTML>
